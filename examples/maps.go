@@ -4,6 +4,10 @@ package main
 
 import "fmt"
 
+func updateMenu(y map[string]float64) {
+  y["coffee"] = 2.99
+}
+
 func main() {
   menu := map[string]float64{
     "soup": 4.99,
@@ -17,6 +21,10 @@ func main() {
   for k, v := range menu {
     fmt.Println(k, "-", v)
   }
+
+  updateMenu(menu)
+
+  fmt.Println("coffee", "-", menu["coffee"])
 
   phonebook := map[int]string{
     267584967: "mario",
